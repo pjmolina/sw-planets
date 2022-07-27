@@ -1,0 +1,7 @@
+<div *ngIf="planet" class="planet">
+  <div class="name">{{ planet.name }}</div>
+  <div class="diameter">{{ planet.diameter | number: "1.0" }} m</div>
+  <div class="climate">{{ planet.climate }}</div>
+  <div class="terrain">{{ planet.terrain }}</div>
+  <div class="population">{{ planet.population }}</div>
+</div>

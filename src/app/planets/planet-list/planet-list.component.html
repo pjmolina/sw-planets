@@ -1,0 +1,11 @@
+<div class="planet-list">
+  <div *ngFor="let p of planets" class="planet">
+    <div class="name">
+      <a [routerLink]="['/planet', p.id]"> {{ p.name }}</a>
+    </div>
+    <div class="diameter">{{ p.diameter | number: "1.0" }} m</div>
+    <div class="climate">{{ p.climate }}</div>
+    <div class="terrain">{{ p.terrain }}</div>
+    <div class="population">{{ renderPopulation(p.population) }}</div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ export class PlanetService {
   getPlanets(page: number = 1): Observable<Planet[]> {
     const url = `${urlBase}/?page=${page}`;
 
+    console.log('Solicito pagina nº ', page);
+
     return this.http
       .get<PageData<PlanetDto>>(url, {
         headers: {
@@ -22,6 +24,7 @@ export class PlanetService {
       })
       .pipe(
         map((pageData) => {
+          console.log('Devuelta la pagina nº ', page);
           return pageData.results.map((z) => this.dtoToPlanet(z));
         })
       );

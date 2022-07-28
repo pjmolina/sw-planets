@@ -14,6 +14,7 @@ export class PlanetListComponent implements OnInit {
   constructor(private planetService: PlanetService) {}
 
   ngOnInit(): void {
+    this.planets = [];
     this.getPlanetPage(1);
     this.getPlanetPage(2);
     this.getPlanetPage(3);
@@ -25,13 +26,9 @@ export class PlanetListComponent implements OnInit {
   getPlanetPage(page: number): void {
     this.planetService.getPlanets(page).subscribe({
       next: (planets) => {
-        if (page === 1) {
-          this.planets = planets;
-        } else {
-          planets.forEach((p) => {
-            this.planets.push(p);
-          });
-        }
+        planets.forEach((p) => {
+          this.planets.push(p);
+        });
         this.error = '';
       },
       error: (err) => {

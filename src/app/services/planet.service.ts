@@ -57,6 +57,7 @@ export class PlanetService {
       url: p.url,
       created: new Date(p.created),
       edited: new Date(p.edited),
+      estadoDelEscudo: 'inactive',
     } as Planet;
   }
 }

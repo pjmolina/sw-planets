@@ -41,6 +41,7 @@ export interface Planet {
   created: Date;
   edited: Date;
   url: string;
+  estadoDelEscudo: string;
 }
 
 /*  Ejemplo de planeta:

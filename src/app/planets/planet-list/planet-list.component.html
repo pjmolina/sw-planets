@@ -1,5 +1,9 @@
 <div class="planet-list">
-  <div *ngFor="let p of planets" class="planet">
+  <div
+    *ngFor="let p of planets"
+    class="planet"
+    [@planetAnimation]="p.estadoDelEscudo"
+  >
     <div class="name">
       <a [routerLink]="['/planets', p.id]"> {{ p.name }}</a>
     </div>
@@ -7,5 +11,6 @@
     <div class="climate">{{ p.climate }}</div>
     <div class="terrain">{{ p.terrain }}</div>
     <div class="population">{{ renderPopulation(p.population) }}</div>
+    <button (click)="toggle(p)">{{ p.estadoDelEscudo }}</button>
   </div>
 </div>
